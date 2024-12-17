@@ -1,0 +1,30 @@
+<h1>Listado de usuarios</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Sueldo</th>
+      <th scope="col">Activo</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (usuario of usuarios; track usuario.id) {
+      <tr>
+        <th scope="row">{{usuario.id}}</th>
+        <td>{{usuario.nombre}}</td>
+        <td>{{usuario.sueldo}}</td>
+        @if (usuario.activo) {
+          <td>Activo</td>
+        } @else {
+          <td>Inactivp</td>
+        }
+        <td>
+          <button type="button" class="btn btn-primary">Actualizar</button>
+          <button type="button" class="btn btn-danger">Eliminar</button>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
